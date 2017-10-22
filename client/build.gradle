@@ -1,7 +1,12 @@
-version '0.1-alpha'
-
+apply plugin: 'net.nemerosa.versioning'
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
+
+version = versioning.info.full
+
+versionFile {
+    file = new File(project.buildDir, '/resources/main/version.properties')
+}
 
 sourceCompatibility = 1.8
 
@@ -11,6 +16,8 @@ dependencies {
     compile "io.reactivex.rxjava2:rxjava:$rx_java_version"
     compile "io.reactivex.rxjava2:rxjavafx:$rx_java_fx_version"
 }
+
+jar.dependsOn(versionFile)
 
 jar {
     manifest {
