@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.time.LocalTime;
 import java.util.concurrent.TimeUnit;
 
 public class ClientMain extends Application {
@@ -27,7 +28,11 @@ public class ClientMain extends Application {
                 .valuesOf(queryText.textProperty())
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .distinctUntilChanged()
-                .map(query -> "Query submitted (reverse): " + new StringBuilder(query).reverse())
+                .map(query -> {
+                    StringBuilder reverseText = new StringBuilder(query).reverse();
+                    LocalTime now = LocalTime.now();
+                    return String.format("Query at %s: (reverse): %s", now, reverseText);
+                })
                 .subscribeOn(Schedulers.computation());
 
         reverseTexts
