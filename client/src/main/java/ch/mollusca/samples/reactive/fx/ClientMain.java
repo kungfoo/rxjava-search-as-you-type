@@ -1,4 +1,4 @@
-package ch.mollusca.samples.fx;
+package ch.mollusca.samples.reactive.fx;
 
 import io.reactivex.Observable;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;

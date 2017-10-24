@@ -1,6 +1,6 @@
 apply plugin: 'net.nemerosa.versioning'
 apply plugin: 'java'
-apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'application'
 
 version = versioning.info.full
 
@@ -9,12 +9,14 @@ versionFile {
 }
 
 sourceCompatibility = 1.8
+mainClassName = 'ch.mollusca.samples.reactive.fx.ClientMain'
+applicationName = 'reactive-client'
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-
     compile "io.reactivex.rxjava2:rxjava:$rx_java_version"
     compile "io.reactivex.rxjava2:rxjavafx:$rx_java_fx_version"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 jar.dependsOn(versionFile)
@@ -22,7 +24,7 @@ jar.dependsOn(versionFile)
 jar {
     manifest {
         attributes(
-                'Main-Class': 'ch.mollusca.samples.fx.ClientMain'
+                'Main-Class': 'ch.mollusca.samples.reactive.fx.ClientMain'
         )
     }
 }
