@@ -1,0 +1,17 @@
+group 'ch.mollusca.rxjava.samples'
+apply plugin: 'net.nemerosa.versioning'
+
+apply plugin: 'java'
+
+version = versioning.info.full
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.hamcrest', name: 'hamcrest-junit', version: '2.0.0.0'
+    compile "io.reactivex.rxjava2:rxjava:$rx_java_version"
+}

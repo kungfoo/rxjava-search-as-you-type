@@ -1,5 +1,6 @@
 package ch.mollusca.samples.reactive.server.resources;
 
+import ch.mollusca.samples.reactive.api.dtos.Saying;
 import com.codahale.metrics.annotation.Timed;
 
 import javax.ws.rs.GET;
@@ -12,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Path("/hello")
 @Produces(MediaType.APPLICATION_JSON)
-public class Hello {
+public class HelloResource {
 
     private static AtomicInteger counter = new AtomicInteger(1);
 

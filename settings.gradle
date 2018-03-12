@@ -1,3 +1,5 @@
+
+include 'shared-testing'
+include 'api'
 include 'client'
 include 'server'
-

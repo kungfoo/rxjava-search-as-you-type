@@ -1,0 +1,25 @@
+plugins {
+    id 'net.ltgt.apt' version '0.10'
+}
+
+apply plugin: 'net.nemerosa.versioning'
+apply plugin: 'java'
+
+version = versioning.info.full
+
+versionFile {
+    file = new File(project.buildDir, '/resources/main/version.properties')
+}
+
+sourceCompatibility = 1.8
+
+dependencies {
+    // lombock stuff
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    apt "org.projectlombok:lombok:1.16.20"
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.4'
+    compile group: 'com.google.guava', name: 'guava', version: '24.0-jre'
+
+    testCompile project(":shared-testing")
+}

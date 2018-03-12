@@ -13,10 +13,16 @@ mainClassName = 'ch.mollusca.samples.reactive.fx.ClientMain'
 applicationName = 'reactive-client'
 
 dependencies {
+    compile project(":api")
+
     compile "io.reactivex.rxjava2:rxjava:$rx_java_version"
     compile "io.reactivex.rxjava2:rxjavafx:$rx_java_fx_version"
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-jackson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    testCompile project(":shared-testing")
 }
 
 jar.dependsOn(versionFile)
