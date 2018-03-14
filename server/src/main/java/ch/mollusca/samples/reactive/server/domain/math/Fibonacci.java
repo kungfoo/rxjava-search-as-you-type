@@ -1,4 +1,4 @@
-package ch.mollusca.samples.reactive.server.domain;
+package ch.mollusca.samples.reactive.server.domain.math;
 
 import io.reactivex.Observable;
 

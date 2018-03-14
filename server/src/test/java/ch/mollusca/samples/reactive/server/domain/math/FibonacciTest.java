@@ -1,6 +1,5 @@
-package ch.mollusca.samples.reactive.server.resources;
+package ch.mollusca.samples.reactive.server.domain.math;
 
-import ch.mollusca.samples.reactive.server.domain.Fibonacci;
 import io.reactivex.Observable;
 import org.junit.Test;
 

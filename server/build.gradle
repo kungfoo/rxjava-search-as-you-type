@@ -19,6 +19,11 @@ run {
 dependencies {
     compile project(":api")
 
+    compile 'pl.setblack:airomem-core:1.1.1'
+
+    // add cqengine for wicked inmemory queries
+    // compile group: 'com.googlecode.cqengine', name: 'cqengine', version: '2.12.4'
+
     compile "io.dropwizard:dropwizard-core:1.2.4"
     compile "io.reactivex.rxjava2:rxjava:$rx_java_version"
 

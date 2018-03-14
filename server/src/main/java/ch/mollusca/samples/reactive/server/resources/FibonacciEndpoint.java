@@ -2,7 +2,7 @@ package ch.mollusca.samples.reactive.server.resources;
 
 
 import ch.mollusca.samples.reactive.api.dtos.FibonacciSequence;
-import ch.mollusca.samples.reactive.server.domain.Fibonacci;
+import ch.mollusca.samples.reactive.server.domain.math.Fibonacci;
 import com.codahale.metrics.annotation.Timed;
 import io.reactivex.Single;
 

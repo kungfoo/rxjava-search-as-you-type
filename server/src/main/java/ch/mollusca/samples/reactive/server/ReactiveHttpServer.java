@@ -2,6 +2,9 @@ package ch.mollusca.samples.reactive.server;
 
 import ch.mollusca.samples.reactive.server.checks.ApplicationVersionCheck;
 import ch.mollusca.samples.reactive.server.checks.DatabaseIsReachableCheck;
+import ch.mollusca.samples.reactive.server.repositories.ChatRepository;
+import ch.mollusca.samples.reactive.server.repositories.DefaultChatRepository;
+import ch.mollusca.samples.reactive.server.resources.ChatResource;
 import ch.mollusca.samples.reactive.server.resources.FibonacciEndpoint;
 import ch.mollusca.samples.reactive.server.resources.HelloResource;
 import io.dropwizard.Application;
@@ -38,5 +41,8 @@ public class ReactiveHttpServer extends Application<ReactiveHttpServerConfigurat
     private void registerResources(Environment environment) {
         environment.jersey().register(HelloResource.class);
         environment.jersey().register(FibonacciEndpoint.class);
+
+        ChatRepository chatRepository = new DefaultChatRepository();
+        environment.jersey().register(new ChatResource(chatRepository));
     }
 }
