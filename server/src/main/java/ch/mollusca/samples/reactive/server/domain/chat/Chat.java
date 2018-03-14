@@ -1,6 +1,5 @@
 package ch.mollusca.samples.reactive.server.domain.chat;
 
-import ch.mollusca.samples.reactive.api.dtos.chat.MessageView;
 import pl.setblack.airomem.core.WriteChecker;
 
 import javax.annotation.Nonnull;
@@ -21,12 +20,12 @@ public class Chat implements Serializable {
         messages.add(message);
     }
 
-    public List<MessageView> getTenMostRecentMessages() {
+    public List<Message> getTenMostRecentMessages() {
         return getMostRecentMessages(10);
     }
 
     @Nonnull
-    public List<MessageView> getMostRecentMessages(int count) {
+    public List<Message> getMostRecentMessages(int count) {
         return messages.stream()
                 .skip(Math.max(messages.size() - count, 0))
                 .limit(count)

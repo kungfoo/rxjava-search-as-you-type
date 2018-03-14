@@ -33,7 +33,7 @@ public class ChatTest {
             chat.addMessage("Foo", "Message #"+i, LocalDateTime.now());
         }
 
-        List<MessageView> tenRecentMessages = chat.getMostRecentMessages(10);
+        List<Message> tenRecentMessages = chat.getMostRecentMessages(10);
         assertThat(tenRecentMessages.size(), is(10));
         assertThat(tenRecentMessages.get(9).getContent(), containsString("#99"));
     }

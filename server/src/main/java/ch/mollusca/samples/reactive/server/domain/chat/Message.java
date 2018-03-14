@@ -1,12 +1,10 @@
 package ch.mollusca.samples.reactive.server.domain.chat;
 
-import ch.mollusca.samples.reactive.api.dtos.chat.MessageView;
-
 import javax.annotation.Nonnull;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Message implements Serializable, MessageView {
+public class Message implements Serializable {
 
     private final Author author;
     private final String content;

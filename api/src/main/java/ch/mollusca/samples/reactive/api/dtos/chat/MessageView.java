@@ -1,11 +1,14 @@
 package ch.mollusca.samples.reactive.api.dtos.chat;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public interface MessageView {
-    @JsonProperty
-    String getContent();
-
-    @JsonProperty
-    String getAuthorNickName();
+@Data
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public class MessageView {
+    private String nickName;
+    private String content;
 }
