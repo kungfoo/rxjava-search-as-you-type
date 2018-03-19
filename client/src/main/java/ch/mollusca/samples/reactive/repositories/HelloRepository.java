@@ -26,7 +26,7 @@ public class HelloRepository {
         return helloEndpoint
                 .sayHello(name)
                 .subscribeOn(Schedulers.io())
-                .delay(2, TimeUnit.SECONDS);
+                .delay(200, TimeUnit.MILLISECONDS);
     }
 
 }
