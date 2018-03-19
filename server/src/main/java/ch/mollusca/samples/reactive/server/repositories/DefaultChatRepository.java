@@ -46,7 +46,7 @@ public class DefaultChatRepository implements  ChatRepository{
     }
 
     private Function<Message, MessageView> projectToMessageView() {
-        return msg -> new MessageView(msg.getAuthorNickName(), msg.getContent());
+        return msg -> new MessageView(msg.getAuthorNickName(), msg.getContent(), msg.getMessageTime());
     }
 
     @Override
