@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  reactive-server:
+      image: reactive-server:latest
+      volumes:
+        - type: bind
+          source: ./chats
+          target: /chats
+      ports:
+        - "8080:8080"
+        - "8081:8081"
